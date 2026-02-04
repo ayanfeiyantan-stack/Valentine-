@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Oluwadamilola ❤️</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background: radial-gradient(circle, #ff5f8f, #7a003c);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      color: white;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .card {
+      background: rgba(0, 0, 0, 0.4);
+      padding: 35px;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 420px;
+      animation: fadeIn 2s ease;
+    }
+
+    h1 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    .buttons {
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 12px 28px;
+      margin: 10px;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+    }
+
+    .yes {
+      background-color: #ff4d6d;
+      color: white;
+    }
+
+    .no {
+      background-color: #ffffff;
+      color: #ff4d6d;
+    }
+
+    #response {
+      margin-top: 25px;
+      font-size: 20px;
+      font-weight: bold;
+      animation: fadeIn 1s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body onclick="playMusic()">
+
+  <audio id="bgMusic" loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_3b1c9c95f7.mp3?filename=romantic-piano-112191.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="card">
+    <h1>Oluwadamilola ❤️</h1>
+    <p>
+      From the moment I thought about Valentine’s Day,<br>
+      your name was the only one in my heart.
+    </p>
+
+    <p>
+      So I’ll ask you properly…<br><br>
+      <strong>Will you be my Valentine?</strong>
+    </p>
+
+    <div class="buttons">
+      <button class="yes" onclick="yesClicked()">Yes 💕</button>
+      <button class="no" onclick="noClicked()">No 🙈</button>
+    </div>
+
+    <div id="response"></div>
+  </div>
+
+  <script>
+    let musicPlayed = false;
+
+    function playMusic() {
+      if (!musicPlayed) {
+        document.getElementById("bgMusic").play();
+        musicPlayed = true;
+      }
+    }
+
+    function yesClicked() {
+      document.getElementById("response").innerHTML =
+        "You just made my heart skip 💖<br>Valentine’s Day is officially ours 🥰";
+    }
+
+    function noClicked() {
+      document.getElementById("response").innerHTML =
+        "Even if it’s a no…<br>I’m glad I asked ❤️ Thank you for being honest.";
+    }
+  </script>
+
+</body>
+</html>
